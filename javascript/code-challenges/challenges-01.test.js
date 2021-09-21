@@ -54,9 +54,9 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 // Passed
 const greeting = (word) => word.toUpperCase() + '!';
@@ -84,13 +84,14 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-
-const addValues = (arr, value) => {
-  // Solution code here...
-};
+// Passed
+const addValues = (arr, value) => arr.push(value); // Mutating original array
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,9 +111,15 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const createList = (availableItems) => {
-  // Solution code here...
+  const newList = [];
+  availableItems.forEach((i) => {
+    if (i.available === true) {
+      newList.push(i.name);
+    }
+  });
+  return newList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,7 +137,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const fizzyBuzzy = [];
+  arr.forEach((i) => {
+    if (i % 3 === 0 && i % 5 === 0) {
+      fizzyBuzzy.push('Fizz Buzz');
+    } else if (i % 3 === 0) {
+      fizzyBuzzy.push('Fizz');
+    } else if (i % 5 === 0) {
+      fizzyBuzzy.push('Buzz');
+    } else {
+      fizzyBuzzy.push(i);
+    }
+  });
+  return fizzyBuzzy;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -1,3 +1,8 @@
-const greeting = (word) => word.toUpperCase() + '!';
+const arr = [2, 4, 6];
 
-console.log(greeting('cat'));
+const newArr = [];
+for (let num in arr) {
+  newArr.push(Math.pow(2, num));
+}
+
+console.log(newArr);

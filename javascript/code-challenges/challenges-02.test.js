@@ -15,20 +15,16 @@ CHALLENGE 2
 
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
-
-const addOne = (arr) => {
-  // Solution code here...
-};
+// Passed
+const addOne = (arr) => arr.map((n) => n + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
-
-const addQuestion = (arr) => {
-  // Solution code here...
-};
+// Passed
+const addQuestion = (arr) => arr.map((word) => word + '?');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -39,11 +35,14 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  for (let num of arr) {
+    newArr.push(Math.pow(2, num));
+  }
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -59,10 +58,8 @@ CHALLENGE 6
 
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
-
-const mapTwoToThe = (arr) => {
-  // Solution code here...
-};
+// Passed
+const mapTwoToThe = (arr) => arr.map((num) => Math.pow(2, num));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

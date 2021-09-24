@@ -48,9 +48,13 @@ CHALLENGE 5
 
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach((num) => {
+    newArr.push(Math.pow(2, num));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,9 +74,9 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map((n) => n.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,9 +88,18 @@ If any element in the array is not a number, the resulting array should have the
 
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const evenOdd = (arr) => {
-  // Solution code here...
+  let newArr = arr.map((i) => {
+    if (typeof i !== 'number') {
+      return 'N/A';
+    } else if (i % 2 === 0) {
+      return 'even';
+    } else {
+      return 'odd';
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +112,7 @@ Write a function named extractAbilities that, given the array of abilities, uses
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const snorlaxAbilities = {
   abilities: [
     {
@@ -131,9 +144,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = (arr) => {
-  // Solution code here...
-};
+const extractAbilities = (arr) => arr.map((i) => i.ability.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -146,7 +157,7 @@ The total should be the sum of the effort and the baseStat.
 
 Here is an example of a single array element: { name: 'speed', total: 35 }
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const snorlaxStats = {
   stats: [
     {
@@ -179,9 +190,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  const results = arr.map((i) => {
+    let sum = i.baseStat + i.effort;
+    return { name: i.stat.name, total: sum };
+  });
+  return results;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
@@ -250,7 +264,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([
       67, 111, 100, 101, 51, 48, 49,
@@ -261,7 +275,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([
       'odd',
@@ -308,8 +322,7 @@ xdescribe('Testing challenge 8', () => {
     expect(evenOdd([5, 8, 2, 'hi']).length).toStrictEqual(4);
   });
 });
-
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual([
       'gluttony',
@@ -322,7 +335,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35 },

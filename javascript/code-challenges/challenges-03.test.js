@@ -42,10 +42,8 @@ Write a function named oddValues that, given an array of integers as input, uses
 
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
-
-const oddValues = (arr) => {
-  // Solution code here...
-};
+//Passed
+const oddValues = (arr) => arr.filter((num) => num % 2 !== 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -54,10 +52,8 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
-
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+// Passed
+const notInFirstArray = (forbiddenValues, arr) => arr.filter((num) => forbiddenValues.includes(num) === false);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal

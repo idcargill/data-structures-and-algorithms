@@ -1,1 +1,5 @@
-console.log(typeof 5)
+let arr = [ 'panda', 'and', 'ran'];
+
+let x = 'panda';
+
+console.log(x.includes('an'));

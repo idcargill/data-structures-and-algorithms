@@ -1,37 +1,53 @@
+// 6 ===================
+const snorlaxData = {
+  stats: [
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/6/',
+        name: 'speed',
+      },
+      effort: 5,
+      baseStat: 30,
+    },
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/5/',
+        name: 'special-defense',
+      },
+      effort: 2,
+      baseStat: 110,
+    },
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/4/',
+        name: 'special-attack',
+      },
+      effort: 9,
+      baseStat: 65,
+    },
+  ],
+  name: 'snorlax',
+  weight: 4600,
+};
 
-// const snorlaxData = {
-//   stats: [
-//     {
-//       stat: {
-//         url: 'https://pokeapi.co/api/v2/stat/6/',
-//         name: 'speed',
-//       },
-//       effort: 5,
-//       baseStat: 30,
-//     },
-//     {
-//       stat: {
-//         url: 'https://pokeapi.co/api/v2/stat/5/',
-//         name: 'special-defense',
-//       },
-//       effort: 2,
-//       baseStat: 110,
-//     },
-//     {
-//       stat: {
-//         url: 'https://pokeapi.co/api/v2/stat/4/',
-//         name: 'special-attack',
-//       },
-//       effort: 9,
-//       baseStat: 65,
-//     },
-//   ],
-//   name: 'snorlax',
-//   weight: 4600,
-// };
+
+const checkStats = (stat, minBase) => {
+  if (stat.baseStat > minBase) {
+    return stat;
+  } else {
+    return false;
+  }
+};
+
+// Tests return correct objects.
+const getBaseStatGreaterThan = (arr, minBaseStat) => {
+  return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
+};
+
+console.log(getBaseStatGreaterThan(snorlaxData, 50));
 
 
-
+//=======================================================
 // const getBaseStatGreaterThan = (arr, minBaseStat) => {
 //   return arr.stats.filter((stats) => stats.baseStat > minBaseStat);
 // };
@@ -97,4 +113,4 @@ function noChildren(person) {
 
 // console.log(noChildren(characters));
 
-console.log(characters.filter(noChildren));
+// console.log(characters.filter(noChildren));

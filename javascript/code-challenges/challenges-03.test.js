@@ -58,9 +58,11 @@ const notInFirstArray = (forbiddenValues, arr) => arr.filter((num) => forbiddenV
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
-Write a function named getBaseStatGreaterThan that, given the snorlaxData, below, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+Write a function named getBaseStatGreaterThan that, given the snorlaxData, below, and an integer as input, 
+uses filter to return an array containing all stats with a baseStat greater than the integer.
 
-For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
+For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 
+'special-attack' objects.
 ------------------------------------------------------------------------------------------------ */
 // ???
 const snorlaxData = {
@@ -94,10 +96,17 @@ const snorlaxData = {
   weight: 4600,
 };
 
+const checkStats = (stat, minBase) => {
+  if (stat.baseStat > minBase) {
+    return stat;
+  } else {
+    return false;
+  }
+};
 
 // Tests return correct objects.
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  return arr.stats.filter((stats) => stats.baseStat > minBaseStat);
+  return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

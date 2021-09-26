@@ -31,21 +31,35 @@ const snorlaxData = {
 };
 
 
-const checkStats = (stat, minBase) => {
-  if (stat.baseStat > minBase) {
-    return stat;
+// const checkStats = (item, minBase) => {
+//   if (item.baseStat > minBase) {
+//     return false;
+//   }
+// };
+
+// // Tests return correct objects.
+// const getBaseStatGreaterThan = (arr, minBaseStat) => {
+//   return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
+// };
+
+// console.log(getBaseStatGreaterThan(snorlaxData, 50));
+
+
+// 7 ===================================
+const checkStatName = (item, minBase) => {
+  if (item.baseStat > minBase) {
+    return item;
   } else {
     return false;
   }
 };
 
-// Tests return correct objects.
-const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
+const getStatName = (arr, minBaseStat) => {
+  let filteredStats =  arr.stats.filter((stat) => checkStatName(stat, minBaseStat));
+  return filteredStats.map((stats) => stats.stat.name);
 };
 
-console.log(getBaseStatGreaterThan(snorlaxData, 50));
-
+console.log(getStatName(snorlaxData, 50));
 
 //=======================================================
 // const getBaseStatGreaterThan = (arr, minBaseStat) => {

@@ -104,20 +104,31 @@ const checkStats = (stat, minBase) => {
   }
 };
 
-// Tests return correct objects.
+// returns correct objects.
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 7. For this function, extend your solution from challenge 7 to only return the name of the stat, rather than the entire stat object.
+Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 7. 
+For this function, extend your solution from challenge 7 to only return the name of the stat, rather than the entire stat object.
 
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
+// Returns correct array items
+
+const checkStatName = (item, minBase) => {
+  if (item.baseStat > minBase) {
+    return item;
+  } else {
+    return false;
+  }
+};
 
 const getStatName = (arr, minBaseStat) => {
-
+  let filteredStats =  arr.stats.filter((stat) => checkStatName(stat, minBaseStat));
+  return filteredStats.map((stats) => stats.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------

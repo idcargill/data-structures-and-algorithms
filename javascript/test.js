@@ -1,20 +1,130 @@
-const arr = [2, 4, 6];
+// 6 ===================
+const snorlaxData = {
+  stats: [
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/6/',
+        name: 'speed',
+      },
+      effort: 5,
+      baseStat: 30,
+    },
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/5/',
+        name: 'special-defense',
+      },
+      effort: 2,
+      baseStat: 110,
+    },
+    {
+      stat: {
+        url: 'https://pokeapi.co/api/v2/stat/4/',
+        name: 'special-attack',
+      },
+      effort: 9,
+      baseStat: 65,
+    },
+  ],
+  name: 'snorlax',
+  weight: 4600,
+};
 
-const newArr = [];
-for (let num in arr) {
-  newArr.push(Math.pow(2, num));
-}
 
-// console.log(newArr);
+// const checkStats = (item, minBase) => {
+//   if (item.baseStat > minBase) {
+//     return false;
+//   }
+// };
 
-const ar = ['c', 'b', 'U', 'a'];
+// // Tests return correct objects.
+// const getBaseStatGreaterThan = (arr, minBaseStat) => {
+//   return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
+// };
 
-// ar.forEach((n) => console.log(n.charCodeAt()));
+// console.log(getBaseStatGreaterThan(snorlaxData, 50));
 
-const dirtyArr = [1, 2, 3, 'cat', 4, 5];
 
-dirtyArr.forEach((i) => {
-  if (typeof i !== 'number') {
-    console.log(i);
+// 7 ===================================
+const checkStatName = (item, minBase) => {
+  if (item.baseStat > minBase) {
+    return item;
+  } else {
+    return false;
   }
-});
+};
+
+const getStatName = (arr, minBaseStat) => {
+  let filteredStats =  arr.stats.filter((stat) => checkStatName(stat, minBaseStat));
+  return filteredStats.map((stats) => stats.stat.name);
+};
+
+console.log(getStatName(snorlaxData, 50));
+
+//=======================================================
+// const getBaseStatGreaterThan = (arr, minBaseStat) => {
+//   return arr.stats.filter((stats) => stats.baseStat > minBaseStat);
+// };
+
+// console.log(getBaseStatGreaterThan(snorlaxData, 50));
+
+
+// ===== 8 
+
+
+const characters = [
+  {
+    name: 'Eddard',
+    spouse: 'Catelyn',
+    children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+    house: 'Stark',
+  },
+  {
+    name: 'Jon',
+    spouse: 'Lysa',
+    children: ['Robin'],
+    house: 'Arryn',
+  },
+  {
+    name: 'Cersei',
+    spouse: 'Robert',
+    children: ['Joffrey', 'Myrcella', 'Tommen'],
+    house: 'Lannister',
+  },
+  {
+    name: 'Daenarys',
+    spouse: 'Khal Drogo',
+    children: ['Drogon', 'Rhaegal', 'Viserion'],
+    house: 'Targaryen',
+  },
+  {
+    name: 'Mace',
+    spouse: 'Alerie',
+    children: ['Margaery', 'Loras'],
+    house: 'Tyrell',
+  },
+  {
+    name: 'Sansa',
+    spouse: 'Tyrion',
+    house: 'Stark',
+  },
+  {
+    name: 'Jon',
+    spouse: null,
+    house: 'Snow',
+  },
+];
+
+function noChildren(person) {
+  if (person.children) {
+    return true;
+  } else {
+    return person
+  }
+
+}
+    
+
+// console.log(noChildren(characters));
+
+// console.log(characters.filter(noChildren));

@@ -106,7 +106,7 @@ const checkStats = (stat, minBase) => {
 
 // returns correct objects.
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
+  return arr.filter((stat) => checkStats(stat, minBaseStat));
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -127,7 +127,7 @@ const checkStatName = (item, minBase) => {
 };
 
 const getStatName = (arr, minBaseStat) => {
-  let filteredStats =  arr.stats.filter((stat) => checkStatName(stat, minBaseStat));
+  let filteredStats =  arr.filter((stat) => checkStatName(stat, minBaseStat));
   return filteredStats.map((stats) => stats.stat.name);
 };
 

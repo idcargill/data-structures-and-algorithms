@@ -1,130 +1,107 @@
-// 6 ===================
-const snorlaxData = {
-  stats: [
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/6/',
-        name: 'speed',
-      },
-      effort: 5,
-      baseStat: 30,
-    },
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/5/',
-        name: 'special-defense',
-      },
-      effort: 2,
-      baseStat: 110,
-    },
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/4/',
-        name: 'special-attack',
-      },
-      effort: 9,
-      baseStat: 65,
-    },
-  ],
-  name: 'snorlax',
-  weight: 4600,
-};
+let arr = ["Cat", "zebra", "fish", "apple"];
 
+let newArr = arr.sort();
 
-// const checkStats = (item, minBase) => {
-//   if (item.baseStat > minBase) {
-//     return false;
-//   }
-// };
+// console.log(newArr);
 
-// // Tests return correct objects.
-// const getBaseStatGreaterThan = (arr, minBaseStat) => {
-//   return arr.stats.filter((stat) => checkStats(stat, minBaseStat));
-// };
+arr.sort();
+// console.log(arr);
 
-// console.log(getBaseStatGreaterThan(snorlaxData, 50));
+let numArr = [1, 4, 100, 12, 2, 13];
 
+// numArr.forEach((i) => {
+//   console.log(i.toString().length);
+// });
 
-// 7 ===================================
-const checkStatName = (item, minBase) => {
-  if (item.baseStat > minBase) {
-    return item;
-  } else {
-    return false;
-  }
-};
+// function Meeting(dayOfWeek, start, end) {
+//   this.dayOfWeek = dayOfWeek;
+//   this.start = start;
+//   this.end = end;
+// }
+// const meetings = [
+//   new Meeting("Monday", "0900", "1000"),
+//   new Meeting("Wednesday", "1300", "1500"),
+//   new Meeting("Tuesday", "1145", "1315"),
+//   new Meeting("Wednesday", "0930", "1000"),
+//   new Meeting("Monday", "0900", "0945"),
+//   new Meeting("Friday", "1200", "1345"),
+// ];
 
-const getStatName = (arr, minBaseStat) => {
-  let filteredStats =  arr.stats.filter((stat) => checkStatName(stat, minBaseStat));
-  return filteredStats.map((stats) => stats.stat.name);
-};
+// console.log(week);
 
-console.log(getStatName(snorlaxData, 50));
-
-//=======================================================
-// const getBaseStatGreaterThan = (arr, minBaseStat) => {
-//   return arr.stats.filter((stats) => stats.baseStat > minBaseStat);
-// };
-
-// console.log(getBaseStatGreaterThan(snorlaxData, 50));
-
-
-// ===== 8 
-
-
-const characters = [
-  {
-    name: 'Eddard',
-    spouse: 'Catelyn',
-    children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
-    house: 'Stark',
-  },
-  {
-    name: 'Jon',
-    spouse: 'Lysa',
-    children: ['Robin'],
-    house: 'Arryn',
-  },
-  {
-    name: 'Cersei',
-    spouse: 'Robert',
-    children: ['Joffrey', 'Myrcella', 'Tommen'],
-    house: 'Lannister',
-  },
-  {
-    name: 'Daenarys',
-    spouse: 'Khal Drogo',
-    children: ['Drogon', 'Rhaegal', 'Viserion'],
-    house: 'Targaryen',
-  },
-  {
-    name: 'Mace',
-    spouse: 'Alerie',
-    children: ['Margaery', 'Loras'],
-    house: 'Tyrell',
-  },
-  {
-    name: 'Sansa',
-    spouse: 'Tyrion',
-    house: 'Stark',
-  },
-  {
-    name: 'Jon',
-    spouse: null,
-    house: 'Snow',
-  },
+// 13==================================================
+function Meeting(dayOfWeek, start, end) {
+  this.dayOfWeek = dayOfWeek;
+  this.start = start;
+  this.end = end;
+}
+const meetings = [
+  new Meeting("Monday", "0900", "1000"),
+  new Meeting("Wednesday", "1300", "1500"),
+  new Meeting("Tuesday", "1145", "1315"),
+  new Meeting("Wednesday", "0930", "1000"),
+  new Meeting("Monday", "0900", "0945"),
+  new Meeting("Friday", "1200", "1345"),
 ];
 
-function noChildren(person) {
-  if (person.children) {
-    return true;
-  } else {
-    return person
-  }
+const week = {
+  Sunday: 0,
+  Monday: 1,
+  Tuesday: 2,
+  Wednesday: 3,
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
+};
 
-}
-    
+const sortSchedule = (arr) => {
+  arr.sort((a, b) => {
+    // Same Day Same Time
+    if (week[a.dayOfWeek] === week[b.dayOfWeek] && +a.start === +b.start) {
+      if (+a.end - +a.start < +b.end - +b.start) {
+        return -1;
+      }
+      if (+a.end - +a.start > +b.end - +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Same Day
+    if (week[a.dayOfWeek] === week[b.dayOfWeek]) {
+      if (+a.end - +a.start < +b.end - +b.start) {
+        return -1;
+      }
+      if (+a.end - +a.start > +b.end - +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Day Time
+    if (week[a.dayOfWeek] < week[b.dayOfWeek]) {
+      if (+a.start < +b.start) {
+        return -1;
+      }
+      if (+a.start > +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Day B first
+    // if (week[a.dayOfWeek] > week[b.dayOfWeek]) {
+    //   if (+a.start < +b.start) {
+    //     return -1;
+    //   }
+    //   if (+a.start > +b.start) {
+    //     return 1;
+    //   } else {
+    //     return 0;
+    //   }
+    // }
+  });
+  return arr;
+};
 
-// console.log(noChildren(characters));
-
-// console.log(characters.filter(noChildren));
+console.log(sortSchedule(meetings));

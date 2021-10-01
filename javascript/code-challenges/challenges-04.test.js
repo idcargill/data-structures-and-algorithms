@@ -108,11 +108,22 @@ const alphabetizeBetter = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
+Write a function named sortByLength that takes in an array of strings and returns the same array,
+with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const sortByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.length < b.length) {
+      return -1;
+    }
+    if (a.length > b.length) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,17 +133,28 @@ Write a function named sortNumbersByLength that takes in an array of numbers and
 
 For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
-
+/// Passed
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.toString().length < b.toString().length) {
+      return -1;
+    }
+    if (a.toString().length > b.toString().length) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named sortPeople that takes in an array of Person objects, each of which has firstName, lastName, and age properties, and sorts those people by their last names. Do not worry about capitalization or first names.
+Write a function named sortPeople that takes in an array of Person objects, each of which has firstName,
+ lastName, and age properties, and sorts those people by their last names. Do not worry about capitalization or first names.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 function Person(firstName, lastName, age) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -146,31 +168,77 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.lastName < b.lastName) {
+      return -1;
+    }
+    if (a.lastName > b.lastName) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
-Write a function named sortPeopleBetter that takes in an array of Person objects, each of which has firstName, lastName, and age properties, and sorts those people by their last names.
+Write a function named sortPeopleBetter that takes in an array of Person objects, each of which has firstName, lastName, and age properties,
+ and sorts those people by their last names.
 
 If two people share the same last name, alphabetize on their first name.
 
 If two people have the same full name, the younger one should come first. Do not worry about capitalization.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    // Same Name sort by age
+    if (a.firstName === b.firstName && a.lastName === b.lastName) {
+      if (a.age < b.age) {
+        return -1;
+      }
+      if (a.age > b.age) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Same Last Name sort by First
+    if (a.lastName === b.lastName) {
+      if (a.firstName < b.firstName) {
+        return -1;
+      }
+      if (a.firstName > b.firstName) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Sort by Last Name
+    if (a.lastName < b.lastName) {
+      return -1;
+    }
+    if (a.lastName > b.lastName) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
 
-Write a function named sortMeetingsByDay that takes in an array of objects, each of which represents a meeting happening a particular day of the week, with a particular start time and end time.
+Write a function named sortMeetingsByDay that takes in an array of objects, each of which represents a meeting happening a particular day of the week,
+with a particular start time and end time.
 
-Sort the meetings by the day on which they happen, Monday-Friday. It does not matter which order meetings come in on a particular day. For example, if there are two meetings on Monday, it does not matter which comes first.
+Sort the meetings by the day on which they happen, Monday-Friday. It does not matter which order meetings come in on a particular day. 
+For example, if there are two meetings on Monday, it does not matter which comes first.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 function Meeting(dayOfWeek, start, end) {
   this.dayOfWeek = dayOfWeek;
   this.start = start;
@@ -185,8 +253,28 @@ const meetings = [
   new Meeting("Friday", "1200", "1345"),
 ];
 
+const week = {
+  Sunday: 0,
+  Monday: 1,
+  Tuesday: 2,
+  Wednesday: 3,
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
+};
+
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (week[a.dayOfWeek] < week[b.dayOfWeek]) {
+      return -1;
+    }
+    if (week[a.dayOfWeek] > week[b.dayOfWeek]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -197,12 +285,52 @@ This challenge should use the array of meetings from challenge 9, above.
 Sort the meetings in the order that they start. If two meetings start at the same time on the same day, the shorter meeting should come first.
 
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
+
+function Meeting(dayOfWeek, start, end) {
+  this.dayOfWeek = dayOfWeek;
+  this.start = start;
+  this.end = end;
+}
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    // Same Day Same Time
+    if (week[a.dayOfWeek] === week[b.dayOfWeek] && +a.start === +b.start) {
+      if (+a.end - +a.start < +b.end - +b.start) {
+        return -1;
+      }
+      if (+a.end - +a.start > +b.end - +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Same Day
+    if (week[a.dayOfWeek] === week[b.dayOfWeek]) {
+      if (+a.end - +a.start < +b.end - +b.start) {
+        return -1;
+      }
+      if (+a.end - +a.start > +b.end - +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+    // Day / Time
+    if (week[a.dayOfWeek] < week[b.dayOfWeek]) {
+      if (+a.start < +b.start) {
+        return -1;
+      }
+      if (+a.start > +b.start) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

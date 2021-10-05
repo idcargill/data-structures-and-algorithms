@@ -143,7 +143,7 @@ CHALLENGE 7 - Stretch Goal
 
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const characters = [
   {
     name: "Eddard",
@@ -205,16 +205,15 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const calculateAverage = (arr) => {
-  return arr.reduce(
-    (acc, num, idx) => {
-      let item = { count: idx, sum: num };
-      let totals = { ...acc, ...item };
-      return totals.sum / totals.count;
-    },
-    { count: 0, sum: 0 }
-  );
+  const initialValue = { count: 0, sum: 0 };
+  const totals = arr.reduce((acc, num) => {
+    acc.count = acc.count + 1;
+    acc.sum = acc.sum + num;
+    return acc;
+  }, initialValue);
+  return totals.sum / totals.count;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -223,7 +222,7 @@ Write a function named countPrimeNumbers that, given an array elements as input,
 
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const isPrime = (value) => {
   for (let i = 2; i < value; i++) {
     if (value % i === 0) {
@@ -234,7 +233,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, num) => {
+    if (isPrime(num)) {
+      acc = acc + 1;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -244,7 +248,7 @@ Write a function named extractState that, given the snorlaxData, below, uses red
 
 If the input array does not have a stat with that specific name, the function should return null.
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const snorlaxData = {
   stats: [
     {
@@ -277,7 +281,13 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce((acc, item) => {
+    if (item.stat.name === statName) {
+      console.log(item);
+      acc = item;
+    }
+    return acc;
+  }, {});
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -298,10 +298,34 @@ Write a function named extractChildren that, given the array of characters from 
 1) Uses filter to return an array of the characters that contain the letter 'a' in their name
 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
+
+const characters = [
+  {
+    name: "Eddard",
+    spouse: "Catelyn",
+    children: ["Robb", "Sansa", "Arya", "Bran", "Rickon"],
+    house: "Stark",
+  },
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  let regex = /a/gi;
+  let childArr = arr.filter((fam) => fam.children);
+  return childArr.reduce((acc, fam) => {
+    if (!fam.children) {
+      return false;
+    }
+    fam.children.forEach((child) => {
+      if (!child) {
+        return false;
+      }
+      if (child.match(regex)) {
+        acc.push(child);
+        // console.log(acc);
+      }
+    });
+    return acc;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------

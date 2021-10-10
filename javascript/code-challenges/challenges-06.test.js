@@ -22,18 +22,21 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 // Passed
+// const getNames = (arr) => {
+//   return arr.map((person) => {
+//     let len = person.name.length - 1;
+//     let name = [...person.name];
+//     let word = "";
+//     name.forEach((l, idx) => {
+//       let letter = name[len - idx];
+//       word = word + letter;
+//     });
+//     return word;
+//   });
+// };
+
 const getNames = (arr) => {
-  return arr.map((person) => {
-    let len = person.name.length - 1;
-    let name = [...person.name];
-    let word = "";
-    name.forEach((l, idx) => {
-      let letter = name[len - idx];
-      word = word + letter;
-    });
-    return word;
-  });
-};
+  return arr.map((person) => person.name.split('').reverse().join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2

@@ -206,7 +206,8 @@ const removeEvenValues = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
+Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many 
+characters will be removed from the end of the string. Return the resulting string.
 
 If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
 
@@ -217,9 +218,15 @@ removeLastCharacters('Gregor', 2) returns 'Greg'
 removeLastCharacters('Gregor', -2) returns 'Gregor'
 removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters > 0) {
+    return str.slice(0, -numberOfCharacters);
+  } else if (numberOfCharacters < 0) {
+    return str;
+  } else if (str.length < numberOfCharacters) {
+    return "";
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -227,10 +234,10 @@ CHALLENGE 11 - Stretch Goal
 
 Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
-
+// Passed
 const totalSumCSV = (str) => {
-  let total = 0;
-  // Solution code here...
+  let arr = str.split(",");
+  let total = arr.reduce((acc, value) => (acc = acc + parseInt(value)), 0);
   return total;
 };
 
@@ -241,15 +248,14 @@ Write a function named removeVowels that takes in a string and returns a new str
 
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
-
-const removeVowels = (str) => {
-  // Solution code here...
-};
+// Passed
+const removeVowels = (str) => str.replace(/[a,e,i,o,u]/gi, "");
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 13 - Stretch Goal
 
-Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
+Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, 
+and the second element is a string of all the vowels that were removed, in alphabetical order.
 
 For example, extractVowels('gregor') returns ['grgr', 'eo'].
 
@@ -257,7 +263,10 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
+  let vowelRegex = /[a,e,i,o,u]/gi;
+  let replaced = str.replace(vowelRegex, "");
+  let removed = str.match(vowelRegex).sort().join("");
+  return [replaced, removed];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -422,14 +431,14 @@ describe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should add up the numbers contained within the string", () => {
     expect(totalSumCSV("1,4,5,7,2")).toStrictEqual(19);
     expect(totalSumCSV("147")).toStrictEqual(147);
   });
 });
 
-xdescribe("Testing challenge 12", () => {
+describe("Testing challenge 12", () => {
   test("It should return the string without vowels", () => {
     expect(removeVowels("gregor")).toStrictEqual("grgr");
     expect(removeVowels("gregor").length).toStrictEqual(4);
@@ -438,7 +447,7 @@ xdescribe("Testing challenge 12", () => {
   });
 });
 
-xdescribe("Testing challenge 13", () => {
+describe("Testing challenge 13", () => {
   test("It should return the string without vowels", () => {
     expect(extractVowels("gregor")).toStrictEqual(["grgr", "eo"]);
     expect(extractVowels("gregor").length).toStrictEqual(2);

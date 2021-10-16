@@ -131,6 +131,7 @@ const containsWorld = (input) => {
 //
 
 /* ------------------------------------------------------------------------------------------------
+// PASS
 CHALLENGE 5
 
 Write a function named isCapitalized that takes in a string. 
@@ -139,16 +140,17 @@ It should only match words, not punctuation.
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-// ???????
+
 const isCapitalized = (str) => {
-  return str.match(/(^[A-Z])[a-z]+/g);
+  return str.match(/[A-Z](\w+)/g) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
 PASS
 CHALLENGE 6
 
-Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array 
+Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to 
+return a new array 
 containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
@@ -162,6 +164,11 @@ const citiesAtoJ = (arr) => {
   });
   return filtered;
 };
+
+// const citiesAtoJ = (arr) => {
+//   let regex = new RegExp(/(^[A-J][a-z]+)/);
+//   return arr.filtered((word) => regex.test(word));
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

@@ -158,15 +158,28 @@ but uses the data's entries instead of its values.
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
+// // Passes
+// const hasChildrenEntries = (arr, character) => {
+//   let person = arr
+//     .filter((item) => item.children)
+//     .filter((i) => i.name === character);
+//   if (person[0]) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
 const hasChildrenEntries = (arr, character) => {
-  let person = arr.filter((item) => item.name === character);
-  console.log(person);
-  if (person[0].children) {
-    console.log(Object.entries(person[0])[2]);
-    return Object.entries(person[0])[2] ? true : false;
-  } else {
-    return false;
-  }
+  let result;
+  arr.forEach((item) => {
+    Object.entries(item).forEach((fam) => {
+      if (fam[1] === character) {
+        result = item.children ? true : false;
+      }
+    });
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,7 +203,7 @@ const totalCharacters = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
-
+PASS
 Write a function named houseSize that takes in the array of characters and creates an object for each house containing the name of the house and the number of members.
 
 All of these objects should be added to an array named "sizes". Return the "sizes" array from the function.
@@ -200,13 +213,20 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  arr.forEach((item) => {
+    let total = 0;
+    let house = item.house;
+    total = item.spouse ? (total += 1) : total;
+    total = item.children ? (total += item.children.length) : total;
+    total = total += 1;
+    sizes.push({ house: house, members: total });
+  });
   return sizes;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
+PASS
 As fans are well aware, "When you play the game of thrones, you win or you die. There is no middle ground."
 
 We will assume that Alerie Tyrell is deceased. She missed her daughter's wedding. Twice.
@@ -223,9 +243,18 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 const deceasedSpouses = ["Catelyn", "Lysa", "Robert", "Khal Drogo", "Alerie"];
 
 const houseSurvivors = (arr) => {
-  const survivors = [];
-  // Solution code here...
-  return survivors;
+  const sizes = [];
+  arr.forEach((item) => {
+    let total = 0;
+    let house = item.house;
+    if (!deceasedSpouses.includes(item.spouse)) {
+      total += 1;
+    }
+    total = item.children ? (total += item.children.length) : total;
+    total = total += 1;
+    sizes.push({ house: house, members: total });
+  });
+  return sizes;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -316,7 +345,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return an object for each house containing the name and size", () => {
     expect(houseSize(characters)[1]).toStrictEqual({
       house: "Arryn",
@@ -326,7 +355,7 @@ xdescribe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should not include any deceased spouses", () => {
     expect(houseSurvivors(characters)[2]).toStrictEqual({
       house: "Lannister",

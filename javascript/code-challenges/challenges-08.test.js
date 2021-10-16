@@ -140,7 +140,6 @@ It should only match words, not punctuation.
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 // ???????
-const isCapitalized = (str) => {
   return str.match(/(^[A-Z])[a-z]+/g);
 };
 

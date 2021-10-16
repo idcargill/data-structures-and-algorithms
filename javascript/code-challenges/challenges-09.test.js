@@ -123,8 +123,9 @@ const getHouses = (arr) => arr.map((item) => item.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
-Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
+PASS
+Write a function named hasChildrenValues that uses Object.values to determine 
+if any given character in the data set has children.
 
 This function should take in an array of data and a character name and return a Boolean.
 
@@ -133,30 +134,58 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
+// const hasChildrenValues = (arr, character) => {
+//   let result = arr
+//     .filter((item) => item.children)
+//     .map((i) => i.name)
+//     .filter((c) => c.includes(character));
+//   return result.length > 0 ? true : false;
+// };
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let person = arr.filter((item) => item.name === character);
+  if (person[0].children) {
+    return Object.values(person[0].children) ? true : false;
+  } else {
+    return false;
+  }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4, but uses the data's entries instead of its values.
+Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4,
+but uses the data's entries instead of its values.
 
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let person = arr.filter((item) => item.name === character);
+  console.log(person);
+  if (person[0].children) {
+    console.log(Object.entries(person[0])[2]);
+    return Object.entries(person[0])[2] ? true : false;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
-
+PASS
 Write a function named totalCharacters that takes in an array and returns the number of characters in the array.
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  return arr.reduce((total, item) => {
+    if (item.spouse) {
+      total += 1;
+    }
+    if (item.children) {
+      total += item.children.length;
+    }
+    total += 1;
+    return total;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -271,7 +300,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return true for characters that have children", () => {
     expect(hasChildrenEntries(characters, "Eddard")).toBeTruthy();
   });
@@ -281,7 +310,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return the number of characters in the array", () => {
     expect(totalCharacters(characters)).toStrictEqual(27);
   });

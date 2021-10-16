@@ -39,19 +39,17 @@ const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
-Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
-
+PASS
+Write a function named checkValues that takes in an object and a value and returns true if the
+value is in the object.
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
-  // Solution code here...
-};
+const checkValues = (obj, value) => Object.values(obj).includes(value);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
+PASS
 You are given an object with names and their coresponding phone numbers that looks like this:
 {
   'Grace Hopper': '222-303-5938',
@@ -68,14 +66,14 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
+const updateNumbers = (obj) =>
+  Object.entries(obj).map((person) => person.join(": "));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
+Write a function named getHouses that returns a new array containing the names of all of the houses
+ in the data set.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -121,11 +119,7 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
-};
+const getHouses = (arr) => arr.map((item) => item.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6

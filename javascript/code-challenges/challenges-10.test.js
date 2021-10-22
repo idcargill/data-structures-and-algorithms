@@ -127,7 +127,7 @@ const salesData = (hours, data) => {
     data.forEach((store) => {
       hourSum.push(store[idx]);
     });
-    let sales = hourSum.reduce((sum, num) => sum + num);
+    let sales = hourSum.reduce((sum, num) => sum + num, 0);
     totalSales.push({
       sales: `${sales} cookies`,
       time: hours[idx],
@@ -135,6 +135,8 @@ const salesData = (hours, data) => {
   });
   return totalSales;
 };
+
+// let sales = hourSum.reduce((sum, num) => sum + num, 0);
 
 console.error("Challenge 5 output: ", salesData(hoursOpen, cookieStores));
 

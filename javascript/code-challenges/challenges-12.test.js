@@ -38,19 +38,20 @@ const validateWord = (word) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-
+PASS
 Write a function named hasNumber that uses a regular expression pattern to determine if a string has one or more letter followed by one or more digit.
 
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
-
+//PASS
 const hasNumber = (string) => {
-  // Solution code here...
+  let regex = new RegExp(/(^[A-Z]+)(\d+)/i);
+  return regex.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+PASS
 Write a function named validateEmail that takes in an email address and validates it based
 on several rules:
   - one word, or two words separated by a period, before the @ symbol
@@ -63,14 +64,15 @@ Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
-
+//Pass
 const validateEmail = (email) => {
-  // Solution code here...
+  let regex = new RegExp(/^([\w]+).?([\w]+)@(\w+)[.][\w]{3}$/i);
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
+// PASS
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
 
 Acceptable formats include:
@@ -84,26 +86,40 @@ Acceptable formats include:
  - 555555-5555
  - 5555555555
 
+
 Your function should include a single regular expression pattern that matches any of these formats.
 
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
-
+//PASS
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  let regex = new RegExp(
+    /^(\(\d{3}\))?([0-9]+)?[ -]?([0-9]+)[ -]?([0-9]+)$(?<![\d]{11,})/i
+  );
+  return regex.test(phoneNumber);
 };
+// const validatePhoneNumber = (phoneNumber) => {
+//   let regex = new RegExp(/^(\(\d{3}\))?([0-9]+)?[ -]?([0-9]+)[ -]?([0-9]+)$/i);
+//   return regex.test(phoneNumber);
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named findTagNames that iterates over an array of HTML strings and uses a regular expression pattern to return the closing tags.
+Write a function named findTagNames that iterates over an array of HTML strings and uses a regular expression pattern to 
+return the closing tags.
 
 For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>']) returns ['/h1', '/p'].
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
-
+// PASS
 const findTagNames = (elements) => {
-  // Solution code here...
+  let tags = [];
+  let regex = /([/][\w]{1,3})/gi;
+  let r = elements.forEach((item) => {
+    tags.push(item.match(regex));
+  });
+  return tags.flat();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -217,7 +233,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return the closing tags", () => {
     expect(
       findTagNames(["<h1>Hello, world!</h1>", "<p>Welcome to my site</p>"])

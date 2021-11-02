@@ -132,11 +132,13 @@ const unenrollBrook = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
-Write a function named sortByDay that takes in an array of strings, 
+PASS
+Write a function named sortByDay that takes in an array of strings,
 each of which represents an event's day and time.
 
-Return a two-dimensional array that organizes those strings based on the day on which they occur. For example, all events on Monday are in the first array, all events on Tuesday are in the second array, etc.
+Return a two-dimensional array that organizes those strings based on the day on which they occur. 
+For example, all events on Monday are in the first array, 
+all events on Tuesday are in the second array, etc.
 
 If an event takes place on multiple days (i.e. "Dancing on Mondays and Tuesdays"), 
 it should appear in both arrays.
@@ -152,7 +154,7 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
   []
 ]
 ------------------------------------------------------------------------------------------------ */
-
+// PASS
 const daysOfWeek = [
   "Monday",
   "Tuesday",
@@ -164,7 +166,18 @@ const daysOfWeek = [
 ];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  let results = new Array([]);
+  for (let i = 0; i < 6; i++) {
+    results.push([]);
+  }
+  arr.forEach((item) => {
+    daysOfWeek.forEach((day) => {
+      if (item.includes(day)) {
+        results[daysOfWeek.indexOf(day)].push(item);
+      }
+    });
+  });
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,9 +188,7 @@ Write a function named characterByIndex that takes in an array of strings and re
 For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
-const characterByIndex = (arr) => {
-  // Solution code here...
-};
+const characterByIndex = (arr) => arr.map((str, idx) => str[idx]);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -390,7 +401,7 @@ describe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should return the ith character of the ith string", () => {
     const words = ["apple", "banana", "cantaloupe"];
 

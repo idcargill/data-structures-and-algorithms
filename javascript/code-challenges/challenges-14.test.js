@@ -29,6 +29,7 @@ const toTitleCase = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+// PASS
 
 Write a function named biggerThanLuke that, given the Star Wars data, below, returns the names of the characters whose mass is greater than Luke's.
 
@@ -110,7 +111,7 @@ let biggerThanLuke = (arr) => {
 CHALLENGE 4
 Write a function named sortBy that takes in an array of objects, each of which has a particular property, 
 and sorts those objects by that property, lowest to highest, returning the same array.
-
+// PASS
 Here is an example of the input:
 [
   {name: 'Sweatshirt', price: 45},
@@ -122,17 +123,16 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 // INCOMPLETE
 const sortBy = (property, arr) => {
-  let prop = property.toLowerCase();
-  let n = arr.sort((a, b) => {
-    if (a.prop > b.prop) {
+  return arr.sort((a, b) => {
+    console.log(a[property]);
+    if (a[property] > b[property]) {
       return 1;
-    } else if (a.prop < b.prop) {
+    } else if (a[property] < b[property]) {
       return -1;
     } else {
       return 0;
     }
   });
-  return n;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,11 +174,40 @@ Here is a sample board:
   ['X', 'O', 'X'],
 ];
 ------------------------------------------------------------------------------------------------ */
+// PASS
+function checkWin(set) {
+  let results = "";
+  if (set.filter((score) => score === "X").length === 3) {
+    results = "X WINS";
+  } else if (set.filter((score) => score === "O").length === 3) {
+    results = "O WINS";
+  } else {
+    results = "nope";
+  }
+  return results;
+}
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
-};
+  const regex = /wins/i;
+  const plays = [];
+  const row1 = board[0];
+  const row2 = board[1];
+  const row3 = board[2];
+  const col1 = [board[0][0], board[1][0], board[2][0]];
+  const col2 = [board[0][1], board[1][1], board[2][1]];
+  const col3 = [board[0][2], board[1][2], board[2][2]];
+  const diagonal1 = [board[0][0], board[1][1], board[2][2]];
+  const diagonal2 = [board[2][0], board[1], [1], board[0][2]];
 
+  plays.push(row1, row2, row3, col1, col2, col3, diagonal1, diagonal2);
+  let winner = false;
+  plays.forEach((game) => {
+    if (checkWin(game).match(regex)) {
+      winner = true;
+    }
+  });
+  return winner;
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

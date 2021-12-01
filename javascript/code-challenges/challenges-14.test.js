@@ -102,8 +102,11 @@ let starWarsData = [
 ];
 
 let biggerThanLuke = (arr) => {
-  const luke = parseInt(arr[0]?.mass);
+  console.log(arr[0]);
+  const luke = parseInt(arr[0]?.["mass"]);
+  console.log(luke);
   const bigPeople = arr.filter((person) => parseInt(person.mass) > luke);
+  console.log(bigPeople.map((p) => p.name).join(" - "));
   return bigPeople.map((p) => p.name).join(" - ");
 };
 

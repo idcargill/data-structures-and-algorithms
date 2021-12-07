@@ -11,7 +11,7 @@ Code Challenge 01: Given a list return a list with items in a reverse order.
 <!-- Embedded whiteboard image -->
 ![Whiteboard](array_reverse.png)
 
-## Approaach & Efficiency
+## Approach & Efficiency
 
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
 We decided to do a loop through the given list.

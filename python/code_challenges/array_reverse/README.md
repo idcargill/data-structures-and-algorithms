@@ -1,4 +1,4 @@
-# Code Challenge 01
+# Array Reverse 01
 
 Ian Cargill and David Waiganjo
 

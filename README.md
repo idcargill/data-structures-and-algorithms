@@ -20,4 +20,6 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-[Challenge 1 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse)
+[Challenge 1 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse/README)
+
+[Challenge 2 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift/README)

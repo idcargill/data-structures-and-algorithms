@@ -29,6 +29,7 @@ class LinkedList:
             else:
                 current = current.next
 
+    @handle_exceptions
     def to_string(self):
         current = self.head
         result_string = ''
@@ -39,6 +40,7 @@ class LinkedList:
             result_string += 'NULL'
         return result_string
 
+    @handle_exceptions
     def all_values(self):
         current = self.head
         results = []

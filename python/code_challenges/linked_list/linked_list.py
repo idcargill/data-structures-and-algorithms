@@ -6,6 +6,8 @@ def handle_exceptions(method):
             print(f'TypeError with {method.__name__} method')
             return 'Method Error'
     return wrapper
+
+
 class LinkedList:
     def __init__(self, head=None):
         self.head = head

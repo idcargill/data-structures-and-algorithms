@@ -25,3 +25,7 @@ To run your tests
 [Challenge 2 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift/README)
 
 [Challenge 3 - array_binary_search](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_binary_search)
+
+[Challenge 4 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
+
+[Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)

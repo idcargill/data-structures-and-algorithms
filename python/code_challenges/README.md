@@ -10,4 +10,4 @@
 
 [Code Challenge 04 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
 
-[Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
+[Code Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)

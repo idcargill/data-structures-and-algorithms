@@ -29,3 +29,5 @@ To run your tests
 [Challenge 4 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
 
 [Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
+
+[Challenge 7 - linked_list_kth](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_kth)

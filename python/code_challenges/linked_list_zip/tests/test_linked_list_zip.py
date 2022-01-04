@@ -27,9 +27,6 @@ def L3():
     L3.insert('carrot')
     L3.insert('dragon fruit')
     L3.insert('endive')
-    L3.insert('fig')
-    L3.insert('grapefruit')
-    L3.insert('hicama')
     return L3
 
 @pytest.mark.zip
@@ -58,5 +55,13 @@ def test_zip_equal_lists(L1, L2):
 def test_zip_larger_second(L1, L3):
     newList = zip_lists(L1, L3)
     actual = newList.size
-    expected = 12
+    expected = 9
+    assert actual == expected
+
+@pytest.mark.zip
+def test_zip_lists_string(L1, L3):
+    newList = zip_lists(L1, L3)
+    actual = newList.to_string()
+    expected = "{'a'} -> {'apple'} -> {'b'} -> {'banana'} -> {'c'} -> {'carrot'} -> {'d'} -> {'dragon fruit'} -> {'endive'} -> NULL"
+    print(actual)
     assert actual == expected

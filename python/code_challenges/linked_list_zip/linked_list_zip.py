@@ -1,3 +1,5 @@
+
+
 def handle_exceptions(method):
     def wrapper(*args, **kwargs):
         try:
@@ -51,7 +53,6 @@ class LinkedList:
             current = current.next
         return results
 
-
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -59,18 +60,81 @@ class Node:
 
 
 def zip_lists(L1, L2):
+    newList = LinkedList()
     p1 = L1.head
     p2 = L2.head
-    newList = LinkedList()
 
-    while p1:
-        newList.insert(p1.value)
-        p1 = p1.next
-
-    while p2:
-        newList.insert(p2.value)
-        p2 = p2.next
-
-
-
+    while True:
+        if p1 is None and p2 is None:
+            break
+        elif p1 is None:
+            newList.insert(p2.value)
+            p2 = p2.next
+        elif p2 is None:
+            newList.insert(p1.value)
+            p1 = p1.next
+        else:
+            newList.insert(p1.value)
+            newList.insert(p2.value)
+            p1 = p1.next
+            p2 = p2.next
     return newList
+
+
+l1 = LinkedList()
+l2 = LinkedList()
+
+l1.insert('a')
+l1.insert('b')
+l1.insert('c')
+
+l2.insert(0)
+l2.insert(1)
+l2.insert(2)
+l2.insert(3)
+l2.insert(4)
+
+x = zip_lists(l1, l2)
+
+print(x.to_string())
+print(x.size)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # while p1 != None and p2 != None:
+
+    #     if p1 != None and p2 != None:
+    #         newList.insert(p1.value)
+    #         newList.insert(p2.value)
+    #         p1 = p1.next
+    #         p2 = p2.next
+    #     elif p1 != None:
+    #         newList.insert(p1.value)
+    #         p1 = p1.next
+    #     elif p2 != None:
+    #         newList.insert(p2.value)
+    #         p2 = p2.next
+
+    # return newList
+

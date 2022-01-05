@@ -1,7 +1,10 @@
-from sys import exec_prefix
-from _pytest.outcomes import _WithException
 import pytest
-from linked_list_kth.linked_list_kth import LinkedList, Node
+
+try:
+    from linked_list_kth import LinkedList, Node
+except:
+    from linked_list_kth.linked_list_kth import LinkedList, Node
+
 
 @pytest.fixture
 def loaded_list():

@@ -52,10 +52,15 @@ class LinkedList:
         return results
 
     def append(self, value):
-        current = self.head
-        while current.next is not None:
-            current = current.next
         node = Node(value)
+        if self.head is None:
+            self.head = node
+            return self.head
+
+        current = self.head
+
+        while current.next:
+            current = current.next
         current.next = node
 
     def kth_from_end(self, k):
@@ -84,70 +89,45 @@ class Node:
         self.next = next
 
 
-def zip_lists(L1, L2):
-    newList = LinkedList()
-    values = []
-    p1 = L1.head
-    p2 = L2.head
-
-    while p1 and p2:
-        values.append(p1.value)
-        values.append(p2.value)
-        p1 = p1.next
-        p2 = p2.next
-    while p1:
-        values.append(p1.value)
-        p1 = p1.next
-    while p2:
-        values.append(p2.value)
-        p2 = p2.next
-    values.reverse()
-    for i in values:
-        newList.insert(i)
-    return newList
-
-
-
-# Return New list
 # def zip_lists(L1, L2):
 #     newList = LinkedList()
+#     values = []
 #     p1 = L1.head
 #     p2 = L2.head
 
 #     while p1 and p2:
-#         newList.insert(p1.value)
-#         newList.insert(p2.value)
+#         values.append(p1.value)
+#         values.append(p2.value)
 #         p1 = p1.next
 #         p2 = p2.next
-
 #     while p1:
-#         newList.insert(p1.value)
+#         values.append(p1.value)
 #         p1 = p1.next
-
 #     while p2:
-#         newList.insert(p2.value)
+#         values.append(p2.value)
 #         p2 = p2.next
+#     values.reverse()
+#     for i in values:
+#         newList.insert(i)
 #     return newList
 
-# def zip_lists(L1, L2):
-#     p1 = L1.head
-#     p2 = L2.head
-#     p3 = ''
+# Append
+def zip_lists(L1, L2):
+    newList = LinkedList()
+    p1 = L1.head
+    p2 = L2.head
 
-#     while p1.next != None and p2.next != None:
-#         p3 = p1.next
-#         p1.next = p2
-#         p1 = p3
+    while p1 or p2:
+        if p1:
+            newList.append(p1.value)
+            p1 = p1.next
+        if p2:
+            newList.append(p2.value)
+            p2 = p2.next
 
-#         p2_next = p2.next
-#         p2.next = p3
-#         p2 = p2_next
-#     while p1.next:
-#         p3 = p1.next
-#         p1.next = p2
-#         p1 = p3
 
-#     return  L2
+    return newList
+
 
 
 if __name__ == '__main__':

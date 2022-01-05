@@ -4,30 +4,32 @@ from linked_list_zip.linked_list_zip import LinkedList, Node, zip_lists
 @pytest.fixture
 def L1():
     L1 = LinkedList()
-    L1.insert('a')
-    L1.insert('b')
-    L1.insert('c')
-    L1.insert('d')
+    L1.insert(2)
+    L1.insert(3)
+    L1.insert(1)
     return L1
 
 @pytest.fixture
 def L2():
     L2 = LinkedList()
-    L2.insert(1)
-    L2.insert(2)
-    L2.insert(3)
     L2.insert(4)
+    L2.insert(9)
+    L2.insert(5)
     return L2
 
 @pytest.fixture
 def L3():
-    L3 = LinkedList()
-    L3.insert('apple')
-    L3.insert('banana')
-    L3.insert('carrot')
-    L3.insert('dragon fruit')
-    L3.insert('endive')
-    return L3
+    L = LinkedList()
+    L.insert(3)
+    L.insert(1)
+    return L
+
+@pytest.fixture
+def L4():
+    L = LinkedList()
+    L.insert(9)
+    L.insert(5)
+    return L
 
 @pytest.mark.zip
 def test_empty_list():
@@ -37,31 +39,23 @@ def test_empty_list():
     assert actual == expected
 
 @pytest.mark.zip
-def test_lists_have_value(L1, L2):
-    v1 = L1.size
-    v2 = L2.size
-    expected = True
-    actual = v1 == v2
-    assert actual == expected
-
-@pytest.mark.zip
-def test_zip_equal_lists(L1, L2):
-    newList = zip_lists(L1, L2)
-    actual = newList.size
-    expected = 8
-    assert actual == expected
-
-@pytest.mark.zip
-def test_zip_larger_second(L1, L3):
-    newList = zip_lists(L1, L3)
-    actual = newList.size
-    expected = 9
-    assert actual == expected
-
-@pytest.mark.zip
-def test_zip_lists_string(L1, L3):
-    newList = zip_lists(L1, L3)
+def test_equal_length_lists(L1, L2):
+    newList= zip_lists(L1, L2)
     actual = newList.to_string()
-    expected = "{'a'} -> {'apple'} -> {'b'} -> {'banana'} -> {'c'} -> {'carrot'} -> {'d'} -> {'dragon fruit'} -> {'endive'} -> NULL"
-    print(actual)
+    expected = "{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> NULL"
+    assert actual == expected
+
+@pytest.mark.zip
+def test_shorter_first(L3, L2):
+    newList= zip_lists(L3, L2)
+    actual = newList.to_string()
+    expected = "{1} -> {5} -> {3} -> {9} -> {4} -> NULL"
+    assert actual == expected
+
+
+@pytest.mark.zip
+def test_shorter_second(L1, L4):
+    newList= zip_lists(L1, L4)
+    actual = newList.to_string()
+    expected = "{1} -> {5} -> {3} -> {9} -> {2} -> NULL"
     assert actual == expected

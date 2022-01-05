@@ -1,6 +1,6 @@
 # Linked List Zip
 
-[Recent PR](https://github.com/idcargill/data-structures-and-algorithms/pull/30)
+[Recent PR](https://github.com/idcargill/data-structures-and-algorithms/pull/31)
 
 ## Problem
 

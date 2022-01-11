@@ -1,5 +1,5 @@
 import pytest
-from stack_and_queue.stack import Stack
+from Stack import Stack
 
 
 pytest.mark.stack

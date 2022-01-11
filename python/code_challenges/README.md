@@ -15,3 +15,5 @@
 [Challenge 7 - linked_list_kth](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_kth)
 
 [Challenge 8 - linked_list_zip](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_zip)
+
+[Challenge 10 - stack-and-queue](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-and-queue)

@@ -7,7 +7,7 @@ class Stack:
             self.value = value
             self.next = next
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.size == 0
 
     def size(self):
@@ -23,7 +23,7 @@ class Stack:
         self.size +=1
 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Nothing to pop")
         temp = self.head.value
         self.head = self.head.next

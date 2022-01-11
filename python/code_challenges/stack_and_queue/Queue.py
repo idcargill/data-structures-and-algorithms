@@ -41,3 +41,12 @@ class Queue:
             all_values.append(front.value)
             front = front.next
         return all_values
+
+
+q = Queue()
+
+q.enqueue('a')
+q.enqueue('b')
+q.enqueue('c')
+
+print(q.all_items())

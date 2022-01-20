@@ -1,5 +1,5 @@
 import pytest
-from linked_list_zip.linked_list_zip import LinkedList, Node, zip_lists
+from code_challenges.linked_list_zip.linked_list_zip import LinkedList, Node, zip_lists
 
 @pytest.fixture
 def L1():

@@ -1,6 +1,7 @@
-import pytest
-from stack_queue_pseudo.stack_queue_pseudo import PseudoQueue
+import sys
+from code_challenges.stack_and_queue.stack import Stack
 
+# from sq.stack_queue_pseudo import PseudoQueue
 # @pytest.fixture
 # def make_PseudoQueue():
 #     PQ = PseudoQueue()
@@ -33,3 +34,6 @@ from stack_queue_pseudo.stack_queue_pseudo import PseudoQueue
 #     pass
 
 
+if __name__=='__main__':
+    for i in sys.path:
+        print(i)

@@ -1,5 +1,5 @@
 import pytest
-from Queue import Queue
+from code_challenges.stack_and_queue.Queue import Queue
 
 @pytest.fixture
 def S():

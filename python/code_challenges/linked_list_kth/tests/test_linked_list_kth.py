@@ -1,9 +1,6 @@
 import pytest
 
-try:
-    from linked_list_kth import LinkedList, Node
-except:
-    from linked_list_kth.linked_list_kth import LinkedList, Node
+from code_challenges.linked_list_kth.linked_list_kth import LinkedList, Node
 
 
 @pytest.fixture

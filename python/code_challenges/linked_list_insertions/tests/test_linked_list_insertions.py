@@ -1,5 +1,5 @@
 import pytest
-from linked_list_insertions.linked_list_insertions import LinkedList, Node
+from code_challenges.linked_list_insertions.linked_list_insertions import LinkedList
 
 @pytest.fixture
 def ll():
@@ -13,10 +13,6 @@ def ll():
 def empty_list():
     empty_list = LinkedList()
     return empty_list
-
-def test_node_setup():
-    result = Node('Fluffykins')
-    assert result.value == 'Fluffykins'
 
 # @pytest.mark.skip
 def test_empty_linked_list(empty_list):

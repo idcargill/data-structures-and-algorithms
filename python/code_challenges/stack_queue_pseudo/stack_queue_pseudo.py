@@ -1,5 +1,4 @@
-from tkinter import W
-from stack import Stack
+from code_challenges.stack_and_queue.stack import Stack
 
 class PseudoQueue:
     def __init__(self):

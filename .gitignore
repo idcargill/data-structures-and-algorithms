@@ -230,3 +230,7 @@ $RECYCLE.BIN/
 mytest.js
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
+
+*.pyc
+*/__pycache__/
+__pycache__/*

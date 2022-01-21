@@ -20,4 +20,4 @@
 
 [Challenge 11 - stack-queue-pseudo](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/sstack-queue-pseudo)
 
-[Challenge 10 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-queue-animal-shelter)
+[Challenge 12 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-queue-animal-shelter)

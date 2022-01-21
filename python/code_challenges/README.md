@@ -17,3 +17,7 @@
 [Challenge 8 - linked_list_zip](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_zip)
 
 [Challenge 10 - stack-and-queue](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-and-queue)
+
+[Challenge 11 - stack-queue-pseudo](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/sstack-queue-pseudo)
+
+[Challenge 12 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-queue-animal-shelter)

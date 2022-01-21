@@ -1,4 +1,4 @@
-from code_challenges.stack_and_queue.stack import Stack
+from code_challenges.stack_and_queue.Stack import Stack
 
 class PseudoQueue:
     def __init__(self):

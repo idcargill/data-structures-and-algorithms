@@ -40,14 +40,24 @@ def test_pop_2(S):
     expected = 1
     assert expected == actual
 
+# @pytest.mark.stack
+# def test_pop_empty_stack(L):
+#     with pytest.raises(Exception):
+#         L.pop()
+#         L.pop()
+#         L.pop()
+#         L.pop()
+#         actual = L.peek()
+
 @pytest.mark.stack
 def test_pop_empty_stack(L):
-    with pytest.raises(Exception):
-        L.pop()
-        L.pop()
-        L.pop()
-        L.pop()
-        actual = L.peek()
+    L.pop()
+    L.pop()
+    L.pop()
+    L.pop()
+    actual = L.peek()
+    expected = None
+    assert actual == expected
 
 @pytest.mark.stack
 def test_peek(L):

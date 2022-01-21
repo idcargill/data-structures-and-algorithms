@@ -26,7 +26,7 @@ def full_shelter():
   full_shelter.enqueue('dog')
   return full_shelter
 
-
+@pytest.mark.shelter
 @pytest.mark.parametrize(
   "test_animal_caps, expected",
   [
@@ -43,6 +43,7 @@ def test_animal_creation_spelling(test_animal_caps, expected):
   c = Animal(test_animal_caps)
   assert c.type == expected
 
+@pytest.mark.shelter
 @pytest.mark.parametrize(
   "test_animal_error, raised",
   [

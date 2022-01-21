@@ -1,5 +1,5 @@
 import sys
-from code_challenges.stack_and_queue.stack import Stack
+from code_challenges.stack_and_queue.Stack import Stack
 
 # from sq.stack_queue_pseudo import PseudoQueue
 # @pytest.fixture

@@ -15,7 +15,8 @@ class Stack:
 
     def peek(self):
         if self.head == None:
-            raise AttributeError("Stack is empty")
+            return None
+            # raise AttributeError("Stack is empty")
         return self.head.value
 
     def push(self, value):

@@ -1,5 +1,4 @@
 from code_challenges.stack_and_queue.Stack import Stack
-from code_challenges.stack_and_queue.test.test_stack import S
 
 class Animal:
     def __init__(self, fluffy):

@@ -1,4 +1,4 @@
-from trees.node import Node
+from code_challenges.trees.node import Node
 
 class Tree:
   def __init__(self, values=None):

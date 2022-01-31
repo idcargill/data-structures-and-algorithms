@@ -1,6 +1,6 @@
 import pytest
-from trees.node import Node
-from trees.tree import Tree, BinaryTree
+from code_challenges.trees.node import Node
+from code_challenges.trees.tree import Tree, BinaryTree
 
 @pytest.fixture
 def T():

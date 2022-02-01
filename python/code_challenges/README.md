@@ -16,10 +16,16 @@
 
 [Challenge 8 - linked_list_zip](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_zip)
 
-[Challenge 10 - stack-and-queue](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-and-queue)
+[Challenge 10 - stack-and-queue](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_and_queue)
 
-[Challenge 11 - stack-queue-pseudo](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/sstack-queue-pseudo)
+[Challenge 11 - stack-queue-pseudo](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_pseudo)
 
-[Challenge 12 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-queue-animal-shelter)
+[Challenge 12 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_animal_shelter)
 
-[Challenge 13 - stack-queue-brackets](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack-queue-brackets)
+[Challenge 13 - stack-queue-brackets](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_brackets)
+
+[Challenge 14 - whiteboard](https://canvas.instructure.com/courses/3826570/assignments/26339196)
+
+[Challenge 15 - trees](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/trees)
+
+[Challenge 16 - max-tree](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/max_tree)

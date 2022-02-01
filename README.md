@@ -20,16 +20,30 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-[Challenge 1 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse/README)
+[Code Challenge 01 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse)
 
-[Challenge 2 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift/README)
+[Code Challenge 02 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift)
 
-[Challenge 3 - array_binary_search](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_binary_search)
+[Code Challenge 03 - array_binary_search](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_binary_search)
 
-[Challenge 4 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
+[Code Challenge 04 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
 
-[Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
+[Code Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
 
 [Challenge 7 - linked_list_kth](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_kth)
 
-[Challenge 8 - linked_list_zipped](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_zipped)
+[Challenge 8 - linked_list_zip](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_zip)
+
+[Challenge 10 - stack-and-queue](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_and_queue)
+
+[Challenge 11 - stack-queue-pseudo](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_pseudo)
+
+[Challenge 12 - stack-queue-animal-shelter](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_animal_shelter)
+
+[Challenge 13 - stack-queue-brackets](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_brackets)
+
+[Challenge 14 - whiteboard](https://canvas.instructure.com/courses/3826570/assignments/26339196)
+
+[Challenge 15 - trees](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/trees)
+
+[Challenge 16 - max-tree](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/max_tree)

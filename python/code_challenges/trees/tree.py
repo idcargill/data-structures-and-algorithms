@@ -1,5 +1,4 @@
 from code_challenges.stack_and_queue.Queue import Queue
-# from code_challenges.trees.node import Node
 class Tree:
   def __init__(self, values=None):
     self.root = None
@@ -42,30 +41,6 @@ class Tree:
 
     return values
 
-
-  # def add_breadth(self, value):
-  #   # breadth any value / binary
-  #   s1 = []
-  #   s2 = []
-    
-  #   if self.root is None:
-  #     self.root = self.Node(value)
-  #     return
-    
-  #   if self.root:
-  #     s1.append(self.root)
-
-  #   while len(s1) > 0:
-  #       s2.append(s1.pop())
-  #       node = s2.pop()
-           
-  #       if node.left is None:
-  #         node.left = self.Node(value)
-  #       elif node.right is None:
-  #         node.right = self.Node(value)
-  #       else:
-  #         s1.append(node.left)
-  #         s1.append(node.right)
 
   def add_breadth(self, value):
     Q = Queue()

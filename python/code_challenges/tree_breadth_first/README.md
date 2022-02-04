@@ -11,38 +11,20 @@ NOTE: Traverse the input tree using a Breadth-first approach
 ![whiteboard](tree_breadth_first.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The tree is traversed with each level entered into a queue.
+The entire tree must be traversed and is performed in O(n)
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 
+```python
+
+from tree_breadth_first.tree_breadth_first import breadth_first
+Tree  # loaded tree
+
+breadth_first(Tree)
+# [ 2, 7, 5, 6 ...]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- - [ ] Top-level README “Table of Contents” is updated
- - [ ] README for this challenge is complete
-       - [ ] Summary, Description, Approach & Efficiency, Solution
-       - [ ] Picture of whiteboard
-       - [ ] Link to code
- - [ ] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-       - [ ] “Happy Path” - Expected outcome
-       - [ ] Expected failure
-       - [ ] Edge Case (if applicable/obvious)
+```

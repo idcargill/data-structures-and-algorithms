@@ -1,13 +1,21 @@
-from code_challenges.trees.node import Node
-
+from code_challenges.stack_and_queue.Queue import Queue
+# from code_challenges.trees.node import Node
 class Tree:
   def __init__(self, values=None):
     self.root = None
+    
+    
+  class Node:
+    def __init__(self, value, left=None, right=None):
+      self.value = value
+      self.left = left
+      self.right = right
+    
+
 
   def pre_order(self):
     # root >> left >> right   a,b,d,e,c,f return array
     values = []
-    
     def walk(root):
       if root is None:
         return
@@ -17,10 +25,12 @@ class Tree:
     walk(self.root)
     
     return values
+
+
       
   def in_order(self):
     #left >> root >> right    d,b,e,a,f,c
-    values = []
+    values = []           
 
     def walk(root):
       if root is None:
@@ -32,6 +42,53 @@ class Tree:
 
     return values
 
+
+  # def add_breadth(self, value):
+  #   # breadth any value / binary
+  #   s1 = []
+  #   s2 = []
+    
+  #   if self.root is None:
+  #     self.root = self.Node(value)
+  #     return
+    
+  #   if self.root:
+  #     s1.append(self.root)
+
+  #   while len(s1) > 0:
+  #       s2.append(s1.pop())
+  #       node = s2.pop()
+           
+  #       if node.left is None:
+  #         node.left = self.Node(value)
+  #       elif node.right is None:
+  #         node.right = self.Node(value)
+  #       else:
+  #         s1.append(node.left)
+  #         s1.append(node.right)
+
+  def add_breadth(self, value):
+    Q = Queue()
+
+    if self.root is None:
+      self.root = self.Node(value)
+      return 
+    
+    if self.root:
+      Q.enqueue(self.root)
+
+    while Q.is_empty() == False:
+      node = Q.dequeue()
+      if node.left is None:
+        node.left = self.Node(value)
+        return
+      if node.right is None:
+        node.right = self.Node(value)
+      else:
+        Q.enqueue(node.left)
+        Q.enqueue(node.right)
+        
+      
 
   def post_order(self):
     #left >> right >> root    d,e,b,f,c,a
@@ -49,7 +106,7 @@ class Tree:
 
 
   def add(self, value):
-    node = Node(value)
+    node = self.Node(value)
     
     if self.is_empty():
       self.root = node
@@ -67,17 +124,17 @@ class BinaryTree(Tree):
   def add(self, value):
     def walk(root):
       if self.root is None:
-        self.root = Node(value)
+        self.root = self.Node(value)
         return
         
       if value > root.value:
         if root.right is None:
-          root.right = Node(value)
+          root.right = self.Node(value)
         else:
           walk(root.right)
       if value < root.value:
         if root.left is None:
-          root.left = Node(value)
+          root.left = self.Node(value)
         else:
           walk(root.left)
     walk(self.root)
@@ -102,4 +159,3 @@ class BinaryTree(Tree):
         return False
 
     return walk(self.root)
-

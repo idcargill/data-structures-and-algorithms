@@ -1,5 +1,7 @@
 # Tree Fizz Buzz
 
+[Recent PR](https://github.com/idcargill/data-structures-and-algorithms/pull/45)
+
 Write a function called fizz buzz tree
 
 - Arguments: k-ary tree

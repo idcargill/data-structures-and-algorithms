@@ -8,6 +8,8 @@ authors = ["Ian Cargill <idcargill@gmail.com>"]
 python = "^3.9"
 pytest-watch = "^4.2.0"
 pytest-testmon = "^1.2.2"
+requests = "^2.27.1"
+beautifulsoup4 = "^4.10.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

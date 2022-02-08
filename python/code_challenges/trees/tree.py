@@ -63,8 +63,7 @@ class Tree:
         Q.enqueue(node.left)
         Q.enqueue(node.right)
         
-      
-
+  
   def post_order(self):
     #left >> right >> root    d,e,b,f,c,a
     values = []
@@ -94,7 +93,12 @@ class Tree:
     return True
 
 
+
+
 class BinaryTree(Tree):
+  def __init__(self):
+    self.root = None
+    self.max = 0
 
   def add(self, value):
     def walk(root):
@@ -116,7 +120,6 @@ class BinaryTree(Tree):
 
   def contains(self, value):
     # return bool
-
     def walk(root):
       if root is None:
         return False
@@ -134,3 +137,19 @@ class BinaryTree(Tree):
         return False
 
     return walk(self.root)
+
+  def max(self):
+
+    def walk(root):
+      if root is None:
+        return
+
+      if root.value > self.max_value:
+        self.max_value = root.value
+
+      walk(root.left)
+      walk(root.right)
+      return self.max
+
+    walk(self.root)
+    return self.max_value

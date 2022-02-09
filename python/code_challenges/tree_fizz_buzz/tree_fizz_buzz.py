@@ -1,31 +1,23 @@
-import queue
 from code_challenges.stack_and_queue.Queue import Queue
 from code_challenges.trees.tree import Tree
 
-class ChildNode:
-  def __init__(self, value, children = None):
+class Node:
+  def __init__(self, value):
     self.value = value
-    self.children = children
+    self.children = []
 
+  def add_child(self, item):
+    self.children.append(item)
 
 def fizz_buzz(value):
-  if value % 3 == 0 and value %5 == 0:
+  if value % 3 == 0 and value % 5 == 0:
     return 'FizzBuzz'
   elif value % 3 == 0:
     return 'Fizz'
   elif value % 5 == 0:
     return 'Buzz'
-  else:
+  else: 
     return str(value)
-
-
-# def check_node(node):
-#   if node.children is None:
-#     return ChildNode(fizz_buzz(node.value))
-#   else:
-#     for c in node.children:
-#       check_node(c) 
-
 
 def fizz_buzz_tree(tree):
   Q = Queue()
@@ -34,19 +26,40 @@ def fizz_buzz_tree(tree):
   if tree.root:
     Q.enqueue(tree.root)
 
+  def check_node(curr):
+    new_node = Node(fizz_buzz(curr.value))
+
+    if T2.root is None:
+      T2.root = new_node
+
+    if len(curr.children) == 0:
+      return new_node
+    elif len(curr.children) > 0:
+      for c in curr.children: 
+        child_node = Node(fizz_buzz(c.value))
+        new_node.add_child(child_node)
+        Q.enqueue(c)
+        check_node(c)
+    
   while Q.is_empty() == False:
     curr = Q.dequeue()
-   
-    if curr.childen == None:
-      node = ChildNode(fizz_buzz(curr.value))
-      T2.add(node)
-      return
-    else:
-      for c in curr.children:
-        Q.enqueue(c)
-        node = ChildNode(fizz_buzz(curr.value))
-      
-    
-    
+    check_node(curr)
+
+  return T2
 
 
+
+def tree():
+  tree.root = Node(10)
+  tree.root.add_child(Node(2))
+  tree.root.add_child(Node(3))
+  tree.root.add_child(Node(15))
+  tree.root.children[0].add_child(Node(5))
+  tree.root.children[0].add_child(Node(3))
+  return tree
+
+tt = tree()
+value = fizz_buzz_tree(tt)
+print(value.root.children[0].value)
+print(value.root.children[1].value)
+print(value.root.children[2].value)

@@ -24,8 +24,12 @@
 
 [Challenge 13 - stack-queue-brackets](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/stack_queue_brackets)
 
-[Challenge 14 - whiteboard](https://canvas.instructure.com/courses/3826570/assignments/26339196)
+[Challenge 14 - whiteboard Challenge](https://canvas.instructure.com/courses/3826570/assignments/26339196)
 
 [Challenge 15 - trees](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/trees)
 
 [Challenge 16 - tree_max](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/tree_max)
+
+[Challenge 17 - tree-breadth-first](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/tree_breadth_first)
+
+[Challenge 18 - tree-fizz-buzz](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/tree_fizz_buzz)

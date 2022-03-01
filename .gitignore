@@ -232,4 +232,6 @@ mytest.js
 *.pyc
 */__pycache__/
 __pycache__/*
+
+garbage.py
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode

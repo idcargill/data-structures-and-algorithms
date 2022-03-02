@@ -30,19 +30,19 @@ If N is larger than TEMP, swap values of TEMP and N
 
 ##### Round 1
 
+![round1](images/round1.png)
+
 First iteration the temp is lower than previous value so they swap positions.
 There are no more elements, so the loop stops.
 N is incremented, and the loop starts again at index 1.
 
-![round1](images/round1.png)
-
 ##### Round 2
+
+![round2](images/round2.png)
 
 Second iteration starts at index 1.
 The temp value is higher than the index pointer N, so nothing is swapped. 
 N is incremented. Next round starts on index 2.
-
-![round2](images/round2.png)
 
 ##### Round 3
 
@@ -54,6 +54,8 @@ N is incremented. Next round starts on index 3.
 
 ##### Round 4
 
+![round4](images/round4.png)
+
 Fourth iteration starts at index 3.
 The temp value is lower than pointer N.
 While TEMP is lower than pointer TEMP-1:
@@ -61,7 +63,11 @@ While TEMP is lower than pointer TEMP-1:
   Pointer N decrements and compares the TEMP value each time until N == 0 or TEMP is larger than N.
   Once the TEMP is larger than N or N is 0, the loop stops.
 
-![round4](images/round4.png)
-
+##### Round 5
 
 ![round5](images/round5.png)
+
+Fifth iteration starts at index 4.
+The temp points to a value lower than the current pointer so the while loop is implemented.
+The temp pointer and N pointer are swapped, and N is decremented.
+This continues until N equals 0 or N is less than the TEMP value. 

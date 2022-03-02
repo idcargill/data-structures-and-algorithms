@@ -47,3 +47,5 @@ To run your tests
 [Challenge 15 - trees](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/trees)
 
 [Challenge 16 - tree_max](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/tree_max)
+
+[Challenge 26 - tree_max](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/Sorting/insertion_sort)

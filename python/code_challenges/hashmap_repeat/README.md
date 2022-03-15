@@ -13,10 +13,14 @@
 
 ## Whiteboard Process
 
-![whiteboard](hashmap_repeated_word.png)
+![whiteboard](hashmap_repeat_word.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+Strip the text into a list of words using a find.all regular expression method.
+Then iterate through the list putting each word into a dictionary. If the word is already present, increment the word value. 
+The first word to be counted twice should be returned as the first duplicated word.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+
+> pytest -v -m hr

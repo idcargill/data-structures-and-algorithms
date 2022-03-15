@@ -4,7 +4,6 @@ def repeated_word(text):
   first_duplicate = ''
   duplicate_found = False
   word_count = {}
-  # words = [word.lower() for word in text.split()]
   words = [word.lower() for word in re.findall('\w+', text, flags=re.I)]
 
 

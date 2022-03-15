@@ -53,3 +53,5 @@ To run your tests
 [Challenge 27 - Merge Sort](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/Sorting/merge_sort)
 
 [Challenge 28 - Quick Sort](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/Sorting/quick_sort)
+
+[Challenge 31 - Hashmap repeat word](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/hashmap_repeat)

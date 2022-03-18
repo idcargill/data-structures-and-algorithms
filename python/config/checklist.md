@@ -1,13 +1,13 @@
  - [x] Top-level README “Table of Contents” is updated
- - [] README for this challenge is complete
-       - [] Summary, Description, Approach & Efficiency, Solution
-       - [] Picture of whiteboard
+ - [x] README for this challenge is complete
+       - [x] Summary, Description, Approach & Efficiency, Solution
+       - [x] Picture of whiteboard
        - [x] Link to code
- - [] Feature tasks for this challenge are completed
- - [] Unit tests written and passing
-       - [] “Happy Path” - Expected outcome
-       - [] Expected failure
-       - [] Edge Case (if applicable/obvious)
+ - [x] Feature tasks for this challenge are completed
+ - [x] Unit tests written and passing
+       - [x] “Happy Path” - Expected outcome
+       - [x] Expected failure
+       - [x] Edge Case (if applicable/obvious)
 
 
 Submit your completed work:

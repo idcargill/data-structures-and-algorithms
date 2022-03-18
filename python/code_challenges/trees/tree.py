@@ -153,3 +153,4 @@ class BinaryTree(Tree):
 
     walk(self.root)
     return self.max_value
+

@@ -1,6 +1,5 @@
 import pytest
 from code_challenges.tree_intersection.tree_intersection import tree_intersection
-from code_challenges.hash_table.hash_table import HashTable
 from code_challenges.trees.tree import BinaryTree
 
 s1 = [150, 100, 250, 75, 160, 125, 175, 200, 350, 300, 500]

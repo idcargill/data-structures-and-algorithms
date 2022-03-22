@@ -1,6 +1,6 @@
 class HashTable:
   def __init__(self):
-    self.MAX = 5
+    self.MAX = 100
     self.array = [ None for i in range(self.MAX)]
 
   def hash(self, key):
@@ -13,7 +13,7 @@ class HashTable:
     total = total * 3457 % self.MAX
     return total
 
-  def set(self, key, value):
+  def __setitem__(self, key, value):
     h = self.hash(key)
 
     if self.array[h]:
@@ -21,7 +21,7 @@ class HashTable:
     else:
       self.array[h] = [(key, value)]
   
-  def get(self, key):
+  def __getitem__(self, key):
     h = self.hash(key)
     if self.array[h] is None:
       return None
@@ -31,7 +31,7 @@ class HashTable:
         if i[0] == key:
           return i[1]
     elif self.array[h] is not None:
-      return (self.array[h][0], self.array[h][0][1])
+      return  self.array[h][0][1]
 
   def contains(self, key):
     h = self.hash(key)

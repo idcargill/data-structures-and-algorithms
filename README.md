@@ -20,15 +20,15 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-[Code Challenge 01 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse)
+[Challenge 01 - array_reverse](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_reverse)
 
-[Code Challenge 02 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift)
+[Challenge 02 - array_insert_shift](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_insert_shift)
 
-[Code Challenge 03 - array_binary_search](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_binary_search)
+[Challenge 03 - array_binary_search](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/array_binary_search)
 
-[Code Challenge 04 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
+[Challenge 04 - linked_list](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list)
 
-[Code Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
+[Challenge 5 - linked_list_insertions](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_insertions)
 
 [Challenge 7 - linked_list_kth](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/linked_list_kth)
 
@@ -59,3 +59,7 @@ To run your tests
 [Challenge 32 - Tree intersection](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/tree_intersection)
 
 [Challenge 33 - Hashmap Left Join](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/hashmap_left_join)
+
+[Challenge 34 - Mock Interview](https://canvas.instructure.com/courses/3826570/assignments/26339210?return_to=https%3A%2F%2Fcanvas.instructure.com%2Fcalendar%23view_name%3Dmonth%26view_start%3D2022-03-29)
+
+[Challenge 35 - Hashmap Left Join](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph)

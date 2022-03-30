@@ -1,11 +1,13 @@
 # Graph
-<!-- Description of the challenge -->
 
-## Whiteboard Process
-<!-- Embedded whiteboard image -->
+Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- add_node
+- add_edge
+- get_node
+- get_neighbors
+- size
 
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
+## Testing
+
+> pytest -v -m graph

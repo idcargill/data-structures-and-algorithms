@@ -36,7 +36,7 @@ class Graph:
     # Adds a new edge between two nodes in the graph
     # If specified, assign a weight to the edge
     # Both nodes should already be in the Graph
-    
+  
     edge1 = self.Edge(vertex1, weight)
     edge2 = self.Edge(vertex2, weight)
 
@@ -50,15 +50,20 @@ class Graph:
     self.adjacency_list[vertex2] = value2
 
   def get_node(self):
-    pass
     # Arguments: none
     # Returns all nodes in graph as a collection (set, list, or similar)
+    if self.size == 0: 
+      return None
+    return list(self.adjacency_list.keys())
+    
 
   def get_neighbor(self, vertex):
-    pass
     # Arguments: node
     # Returns a collection of edges connected to the given node
     # Include the weight of connection in returned collection
+    neighbors = [(v.vertex, v.weight) for v in self.adjacency_list[vertex]]
+    return neighbors
+    
 
   def size(self):
     # Arguments: none
@@ -70,11 +75,14 @@ class Graph:
 g = Graph()
 g.add_node('a')
 g.add_node('b')
-g.add_node('b')
-
+g.add_node('c')
+g.add_node('kitten')
 g.add_edge('a', 'b')
+g.add_edge('a', 'kitten')
 
 
-print(g.adjacency_list['a'][0].vertex)
-print(g.adjacency_list['b'][0].vertex)
+print([v.vertex for v in g.adjacency_list['a']])
 
+print(f'Size {g.size}')
+print(g.get_node())
+print(g.get_neighbor('a'))

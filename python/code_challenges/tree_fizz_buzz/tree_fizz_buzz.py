@@ -46,20 +46,3 @@ def fizz_buzz_tree(tree):
     check_node(curr)
 
   return T2
-
-
-
-def tree():
-  tree.root = Node(10)
-  tree.root.add_child(Node(2))
-  tree.root.add_child(Node(3))
-  tree.root.add_child(Node(15))
-  tree.root.children[0].add_child(Node(5))
-  tree.root.children[0].add_child(Node(3))
-  return tree
-
-tt = tree()
-value = fizz_buzz_tree(tt)
-print(value.root.children[0].value)
-print(value.root.children[1].value)
-print(value.root.children[2].value)

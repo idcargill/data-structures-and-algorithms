@@ -14,8 +14,4 @@ def array_binary_search(arr, value):
     return -1
 
 
-# execute
-arr = []
-for i in range(50):
-    arr.append(i)
-print(array_binary_search(arr, 10))
+

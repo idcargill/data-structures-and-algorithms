@@ -86,20 +86,4 @@ class LinkedList:
 
 
 
-if __name__=='__main__':
-    L = LinkedList()
-    L.insert('candy')
-    L.insert('cat')
-    L.insert_before('end', 'inserted before end')
-    L.append('end')
-    L.insert_after('candy', 'inserted after candy')
-    print(L.isEmpty())
-
-
-
-    print(L.includes('cat'))
-    print(L.to_string())
-    print(L.all_values())
-
-    print(L.kth_from_end(1))
 

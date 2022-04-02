@@ -70,19 +70,3 @@ class Graph:
     # Returns the total number of nodes in the graph
     return self.size
 
-
-
-g = Graph()
-g.add_node('a')
-g.add_node('b')
-g.add_node('c')
-g.add_node('kitten')
-g.add_edge('a', 'b')
-g.add_edge('a', 'kitten')
-
-
-print([v.vertex for v in g.adjacency_list['a']])
-
-print(f'Size {g.size}')
-print(g.get_node())
-print(g.get_neighbor('a'))

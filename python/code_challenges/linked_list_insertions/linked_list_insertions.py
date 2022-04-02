@@ -98,14 +98,3 @@ class LinkedList:
             current = current.next
 
 
-
-
-
-ll = LinkedList()
-ll.insert(1)
-ll.insert(2)
-ll.insert(3)
-
-ll.insert_b(2, 'cats')
-
-print(ll.all_values())

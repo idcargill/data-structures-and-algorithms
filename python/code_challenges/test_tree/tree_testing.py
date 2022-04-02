@@ -1,4 +1,4 @@
-
+from code_challenges.tree_breadth_first.tree_breadth_first import breadth_first
 class TreeNode:
   def __init__(self, data=None):
     self.data = data
@@ -40,20 +40,14 @@ class TreeNode:
 
    
 
-# T = TreeNode()
+T = TreeNode()
 
-# T.add('A')
-# T.add('B')
-# T.add('C')
-# T.add('D')
-# T.add('E')
-# T.add('F')
-# print(T.data.data)
-# print(T.left.data)
-# print(T.right.data)
-# print(T.left.left.data)
-# print(T.left.right.data)
-# print(T.right.left.data)
+T.add_breadth('A')
+T.add_breadth('B')
+T.add_breadth('C')
+T.add_breadth('D')
+T.add_breadth('E')
+T.add_breadth('F')
 
 
-    
+print(breadth_first(T))

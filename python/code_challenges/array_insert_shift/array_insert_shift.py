@@ -16,4 +16,4 @@ def insert_shift_array(arr, num):
             result.append(arr[i])
     return result
 
-print(insert_shift_array(arr, num))
+

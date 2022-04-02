@@ -44,7 +44,6 @@ class Tree:
 
   def add_breadth(self, value):
     Q = Queue()
-
     if self.root is None:
       self.root = self.Node(value)
       return 
@@ -154,3 +153,9 @@ class BinaryTree(Tree):
     walk(self.root)
     return self.max_value
 
+T = Tree()
+
+for i in range(20):
+  T.add_breadth(i)
+
+print(T.pre_order())

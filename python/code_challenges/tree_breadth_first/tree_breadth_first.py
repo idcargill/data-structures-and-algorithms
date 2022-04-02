@@ -1,5 +1,6 @@
 # output: [2,7,5,2,6,9,5,11,4]
 from code_challenges.stack_and_queue.Queue import Queue
+from code_challenges.test_tree.tree_w_node import Tree
 
 def breadth_first(tree):
   results = []

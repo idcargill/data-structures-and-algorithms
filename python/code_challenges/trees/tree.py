@@ -11,7 +11,7 @@ class Tree:
       self.right = right
     
 
-
+ 
   def pre_order(self):
     # root >> left >> right   a,b,d,e,c,f return array
     values = []
@@ -19,8 +19,8 @@ class Tree:
       if root is None:
         return
       values.append(root.value)
-      walk(root.left)
-      walk(root.right)
+      walk(root.left)  
+      walk(root.right) 
     walk(self.root)
     
     return values

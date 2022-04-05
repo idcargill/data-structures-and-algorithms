@@ -88,17 +88,14 @@ class BinaryTree:
     values = []
     if self.root is None:
       return None
-
+ 
     def walk(root):
       if root is None:
         return
         # values.append(root.value)   # pre order first
-
-      if root.left:
-        walk(root.left)
-      # values.append(root.value)     # in order 
-      if root.right:
-        walk(root.right)
+      walk(root.left)
+        # values.append(root.value)     # in order 
+      walk(root.right)
       values.append(root.value)       # post order
 
       return  values
@@ -116,4 +113,4 @@ if __name__ == '__main__':
 
   print(T.breadth_first_traversal())
   print(T.depth_first_traversal())
-    
+  

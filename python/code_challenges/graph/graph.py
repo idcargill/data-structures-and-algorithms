@@ -71,7 +71,7 @@ class Graph:
     # Returns the total number of nodes in the graph
     return self.size
 
-
+  
   def breadth_traversal(self, vertex):
     Q = Queue()
     visited = {}

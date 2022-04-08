@@ -6,7 +6,7 @@
 
 Determine whether the trip is possible with direct flights, and how much it would cost.
 
-[PR]()
+[PR](https://github.com/idcargill/data-structures-and-algorithms/pull/57)
 
 ## Whiteboard Process
 

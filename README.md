@@ -62,6 +62,10 @@ To run your tests
 
 [Challenge 34 - Mock Interview](https://canvas.instructure.com/courses/3826570/assignments/26339210?return_to=https%3A%2F%2Fcanvas.instructure.com%2Fcalendar%23view_name%3Dmonth%26view_start%3D2022-03-29)
 
-[Challenge 35 - Hashmap Left Join](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph)
+[Challenge 35 - Graph](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph)
 
-[Challenge 36 - Hashmap Left Join](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph_breadth_first)
+[Challenge 36 - Graph Breadth First](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph_breadth_first)
+
+[Challenge 37 - Graph Business Trip](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph_business_trip)
+
+[Challenge 38 - Graph Depth Traversal](https://github.com/idcargill/data-structures-and-algorithms/tree/main/python/code_challenges/graph_depth_traversal)

@@ -24,8 +24,10 @@ class Stack:
         self.size +=1
 
     def pop(self):
+        # if self.is_empty():
+        #     raise Exception("Nothing to pop")
         if self.is_empty():
-            raise Exception("Nothing to pop")
+            return None
         temp = self.head.value
         self.head = self.head.next
         return temp

@@ -1,0 +1,35 @@
+Depth first search
+  - Tree
+  - Graph
+
+Breadth First search
+  - Tree
+  - Graph
+
+Matching Parenthesis(brackets)
+  - stack
+
+Hash Tables
+  - memoization / caching ==> dynamic programming
+
+Variable Pointers (multiple pointers)
+  - Strings
+  - Linked Lists
+  (longest palindrome in string)
+
+Reverse a Linked List
+  - 3 pointers
+
+Sorting Fundamentals
+  Run times
+  - quick Sorting
+  - merge Sorting
+  - bubble Sorting
+  - binary search
+
+Recursion
+
+Custom Data Structures
+  - class Structures
+
+Binary Search

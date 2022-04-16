@@ -1,4 +1,4 @@
-from code_challenges.stack_and_queue.Stack import Stack
+from code_challenges.stack_and_queue.stack import Stack
 
 class PseudoQueue:
     def __init__(self):
@@ -11,12 +11,12 @@ class PseudoQueue:
         self.count += 1
 
     def is_empty(self):
-        self.count == 0
+        return self.count == 0
 
     ## Size
     def dequeue(self):
         if self.is_empty():
-            return None
+            raise Exception
 
         if self.s2.size == 0:
             self.count -= 1
@@ -26,4 +26,3 @@ class PseudoQueue:
             value = self.s1.pop()
             self.s2.push(value)
         return self.s2.pop()
-

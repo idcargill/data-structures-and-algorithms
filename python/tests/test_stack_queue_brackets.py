@@ -1,5 +1,5 @@
 import pytest 
-from code_challenges.stack_and_queue.Stack import Stack
+from code_challenges.stack_and_queue.stack import Stack
 from code_challenges.stack_queue_brackets.stack_queue_brackets import validate_brackets
 
 @pytest.mark.brackets

@@ -34,8 +34,8 @@ def test_bs1_pre(bs1):
   expected = [150, 100, 75, 125, 250, 160, 175, 200, 350, 300, 500]
   assert actual == expected
 
-@pytest.mark.tree_intersect
-def test_tree_intersect(bs1, bs2):
-  actual = tree_intersection(bs1, bs2)
-  expected = [100, 160, 125, 175, 200, 350, 500]
-  assert actual == expected
+# @pytest.mark.tree_intersect
+# def test_tree_intersect(bs1, bs2):
+#   actual = tree_intersection(bs1, bs2)
+#   expected = [100, 160, 125, 175, 200, 350, 500]
+#   assert actual == expected

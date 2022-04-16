@@ -1,5 +1,5 @@
 from code_challenges.stack_and_queue.Queue import Queue
-from code_challenges.stack_and_queue.Stack import Stack
+from code_challenges.stack_and_queue.stack import Stack
 
 class BinaryTree:
   def __init__(self):
